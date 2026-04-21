@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Crash HUD",
+  "version": "1.2",
+  "description": "Real-time quantitative analysis for BC.Game Crash using Mean Reversion modeling.",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://bcgame51.com/*", "https://bc.game/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
