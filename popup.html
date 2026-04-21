@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { width: 320px; font-family: 'Segoe UI', sans-serif; background: #0f1114; color: white; margin: 0; padding: 12px; }
+    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .status-bar { font-size: 11px; font-weight: bold; text-align: center; padding: 8px; border-radius: 4px; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .status-red { background: #3d0c0c; color: #ff4d4d; border: 1px solid #ff4d4d; }
+    .status-yellow { background: #3d340c; color: #ffcc00; border: 1px solid #ffcc00; }
+    .status-green { background: #0c3d14; color: #00ff66; border: 1px solid #00ff66; }
+    .dashboard { background: #1a1d23; border: 1px solid #2d323a; padding: 12px; border-radius: 6px; }
+    .prob-grid { display: flex; justify-content: space-between; margin-top: 8px; }
+    .prob-val { font-size: 16px; font-weight: 800; display: block; }
+    .prob-lbl { font-size: 9px; color: #888; text-transform: uppercase; }
+    .table-container { max-height: 220px; overflow-y: auto; margin-top: 12px; border: 1px solid #2d323a; border-radius: 4px; }
+    table { width: 100%; border-collapse: collapse; font-size: 11px; }
+    th { background: #262b31; padding: 8px; text-align: left; position: sticky; top: 0; }
+    td { padding: 8px; border-bottom: 1px solid #262b31; }
+    .high { color: #00ff66; } .low { color: #ff4d4d; }
+    .btn-reset { background: #ff4d4d; color: white; border: none; padding: 4px 8px; font-size: 10px; cursor: pointer; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span style="font-weight:bold; color:#00ff66;">STRIKER HUD v1.2</span>
+    <button id="btn-reset" class="btn-reset">RESET</button>
+  </div>
+  <div id="algo-status" class="status-bar status-red">WARM UP: 0/30</div>
+  <div class="dashboard">
+    <div class="prob-grid">
+      <div style="text-align:center"><span class="prob-lbl">> 2.0x</span><span id="prob-2x" class="prob-val">--%</span></div>
+      <div style="text-align:center"><span class="prob-lbl">> 3.0x</span><span id="prob-3x" class="prob-val">--%</span></div>
+      <div style="text-align:center"><span class="prob-lbl">> 5.0x</span><span id="prob-5x" class="prob-val">--%</span></div>
+    </div>
+  </div>
+  <div class="table-container">
+    <table>
+      <thead><tr><th>Time</th><th>Result</th></tr></thead>
+      <tbody id="history-body"></tbody>
+    </table>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
